@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url(bg.jpg);
+  background-size: cover;
+}
+a {
+  color: white;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+/* header start */
+header {
+  height: 100px;
+  border-bottom: 5px solid rgba(255, 255, 255, 0.06);
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+header nav .logo a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  column-gap: 30px;
+}
+nav ul li a {
+  text-decoration: none;
+  transition: color 0.25s ease;
+  /* Transition kullanırken mesela hover olduğunda geçişin ease 
+  istiyorsak: hover olan classa değil de bir üstündeki classa 
+  transition özelliği veririz.  */
+}
+nav ul li a:hover {
+  color: #0ba2c0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  /* Dikeyde center olması için header kısmına 100px değerini verdik */
+  column-gap: 48px;
+  /* Column gap: Kolanlar arası mesafe koymak için kullanılır.*/
+  /* Menüde iki tane child var. Biri ul diğeri adır. Bu yüzden menüye 
+  column-gap dersek iki childi ayırmış oluruz. */
+}
+.menu-button {
+  color: #0ba2c0;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 12px 24px;
+  border-radius: 56px;
+  transition: all 0.25s ease;
+}
+.menu-button:hover {
+  background-color: #0ba2c0;
+  color: white;
+}
+/* header end */
+
+/* section start */
+.content {
+  color: white;
+  height: calc(100vh-100px);
+  /* header 100 pxdi.100 vh:Ekranın görüntüsü kadar. Bir de üst kısmın
+  header kısmının da 100 px olduğu için scroll tuşu çıkar.Bu yüzden
+  "100vh-100px deriz scroll tuşu kalkar.  */
+  padding-top: 150px;
+}
+.content h1 {
+  font-size: 60px;
+  text-align: center;
+}
+.content p {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 32px;
+}
+.content .links {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  column-gap: 16px;
+}
+
+.content .links a {
+  background-color: white;
+  padding: 20px;
+  width: 200px;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 56px;
+  transition: all 0.25s ease-in;
+}
+.content .links a:hover {
+  background-color: #0ba2c0;
+  color: white;
+}
+
+/* section end */
+
+/* Responsive start */
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    /* Logo ve New Link kısmı sağa ve sola çok bitişik bu yüzden padding verdik. */
+  }
+  .menu-button {
+    display: none;
+  }
+  /* New Link mobil cihazlarda görünmeyecek */
+  .menu ul {
+    column-gap: 20px;
+  }
+  /* Linkler arasındaki boşlukları 30pxden 20pxe çektik. */
+  .content {
+    padding-top: 50px;
+  }
+  .content h1 {
+    font-size: 36px;
+  }
+  .content p {
+    font-size: 16px;
+  }
+  .content .links {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+  .content .links a {
+    padding: 14px;
+    /* Butonlar içeriği kadar yer kaplar.  width:90% dediğimde butonun 
+    genişliği alanın %90nını kaplar.*/
+    width: 90%;
+  }
+}
+/* Responsive end */
